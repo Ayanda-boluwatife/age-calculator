@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+    rel="stylesheet">
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body class="bg-off_white font-popp flex items-center justify-center flex-col h-screen">
+  <main class="p-10 bg-white rounded-3xl rounded-br-[8rem] space-y-5 md:space-y-0">
+    <section>
+      <div id="alert"
+        class="absolute bg-red-200 flex top-5 right-5 h-20 space-x-5 items-center border-l-4 border-red-800 rounded-lg overflow-hidden hidden">
+        <i class="fa-solid fa-circle-exclamation text-red-700 text-3xl pl-5 animate-bounce animate-pulse"></i>
+        <p class="text-red-800 font-semibold" id="alert-text">Please select the rating</p>
+        <button class="h-full bg-red-400 w-10" id="close-btn"><i
+            class="fa-solid fa-xmark text-red-800 text-center text-lg font-extrabold"></i></button>
+      </div>
+    </section>
+    <section>
+      <form class="space-y-5" onsubmit="return false;">
+        <div class="flex justify-around gap-2 md:gap-5 md:pr-24">
+          <div error=""
+            class="flex flex-col after:content-[attr(error)] after:text-xs after:text-light_red after:italic">
+            <label for="day-input" class="text-smokey_grey text-sm">DAY</label>
+            <input type="number" placeholder="DD" id="day-input"
+              class="h-10 w-24 md:h-12 md:gap-5 ronded-md remove-arrow rounded-md border border-light_grey focus:border-Purple">
+          </div>
+          <div class="flex flex-col after:content-[attr(error)] after:text-xs after:text-light_red after:italic">
+            <label for="month-input" class="text-smokey_grey text-sm">MONTH</label>
+            <input type="number" placeholder="MM" id="month-input"
+              class="h-10 w-24 md:h-12 md:gap-5 ronded-md remove-arrow rounded-md border border-light_grey focus:border-Purple">
+          </div>
+          <div class="flex flex-col after:content-[attr(error)] after:text-xs after:text-light_red after:italic">
+            <label for="year-input" class="text-smokey_grey text-sm">YEAR</label>
+            <input type="number" placeholder="YYYY" id="year-input"
+              class="h-10 w-24 md:h-12 md:gap-5 ronded-md remove-arrow rounded-md border border-light_grey focus:border-Purple">
+          </div>
+        </div>
+        <div class="flex flex-col items-center pt-10 md:pt-4 md:items-end">
+          <div class="h-[1px] w-full bg-light_grey"></div>
+          <button id="submit-btn">
+            <div class="bg-Purple h-14 w-14 rounded-full grid place-items-center -translate-y-1/2 hover:bg-off_black">
+              <img src="./assets/images/icon-arrow.svg" alt="" class="h-6 w-6">
+            </div>
+          </button>
+        </div>
+      </form>
+    </section>
+    <section class="">
+      <h2 class="text-5xl md:text-6xl italic font-bold"><span class="text-Purple" id="years">-- </span>years</h2>
+      <h2 class="text-5xl md:text-6xl italic font-bold"><span class="text-Purple" id="months">-- </span>months</h2>
+      <h2 class="text-5xl md:text-6xl italic font-bold"><span class="text-Purple" id="days">-- </span>days</h2>
+    </section>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Niklaus M.</a>.
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
